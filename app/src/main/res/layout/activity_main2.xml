@@ -4,12 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
     <Button
         android:id="@+id/defaultDialogBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Default Dialog"
+        android:text="Get Value"
         android:visibility="visible" />
+
     <com.example.android_gearbox_recyclerview.WheelView
         android:id="@+id/main_wv"
         android:layout_width="match_parent"
@@ -17,26 +19,24 @@
         android:visibility="gone" />
 
     <NumberPicker
-        android:background="@android:color/darker_gray"
         android:id="@+id/picker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
         android:scaleX="1"
         android:scaleY="1"
         android:visibility="gone" />
 
 
     <com.example.android_gearbox_recyclerview.weidongjianview.LoopView
-        android:layout_marginTop="20dp"
         android:id="@+id/loopView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:awv_textsize="18"
-        app:awv_isLoop="true"
+        android:layout_marginTop="0dp"
         android:background="@android:color/black"
-        app:awv_itemsVisibleCount="9"
-        />
-
+        app:awv_isLoop="true"
+        app:awv_itemsVisibleCount="15"
+        app:awv_textsize="18" />
 
 
     <Button

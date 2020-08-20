@@ -33,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
             "season 13", "season 14", "season 15"};
     private LoopView loopView;
 
+    private int loopIndex;
+    private ArrayList<String> list;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +45,9 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDialogDefaultSize();
+                // showDialogDefaultSize();
+                Toast.makeText(MainActivity.this, "Index: " + loopView.getSelectedItem() + " Data: " +
+                        list.get(loopView.getSelectedItem()), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -68,13 +73,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void prepareWeidongjianView() {
 
-        int itemSize = 2;
+        int itemSize = 20;
 
         loopView = (LoopView) findViewById(R.id.loopView);
 
-        final ArrayList<String> list = new ArrayList<>();
+        list = new ArrayList<>();
         for (int i = 0; i < itemSize; i++) {
-            list.add("Season" + i);
+            list.add("Season " + (i + 1));
         }
 
         loopView.setItems(list);
@@ -84,17 +89,16 @@ public class MainActivity extends AppCompatActivity {
         loopView.setDividerColor(Color.BLACK);
         loopView.setTextSize(22.0f);
         loopView.setLineSpacingMultiplier(.5f);
-        loopView.setNotLoop();
-
 
         loopView.setListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(int index) {
-                Toast.makeText(MainActivity.this, index + " " + list.get(index), Toast.LENGTH_SHORT).show();
+
+                loopView.setCurrentPosition(index);
+                Toast.makeText(MainActivity.this, "Index: " + loopView.getSelectedItem() + " Data: " +
+                        list.get(loopView.getSelectedItem()), Toast.LENGTH_SHORT).show();
             }
         });
-
-
     }
 
     private void showDialogDefaultSize() {
