@@ -1,4 +1,4 @@
-#Thu Aug 20 17:11:23 BDT 2020
+#Thu Aug 20 17:33:45 BDT 2020
 base.0=D\:\\AndroidWorks\\androidgearboxrecyclerview\\app\\build\\intermediates\\dex\\debug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
